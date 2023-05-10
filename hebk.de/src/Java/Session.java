@@ -34,10 +34,12 @@ public class Session {
         out.writeUTF(user.getName());
         System.out.println("This ist your Chat with "+ in.readUTF());
         Thread thread = new Thread(() -> {
-            try {
-                System.out.println(in.readUTF());
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            while(true) {
+                try {
+                    System.out.println(in.readUTF());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
         thread.start();
