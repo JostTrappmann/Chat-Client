@@ -13,9 +13,9 @@ public class Server {
     private Session session = new Session();
     public void newSession() throws IOException{
 
-        int Port =session.port();
+        int port =session.port();
         String IP = session.iP();
-        ServerSocket serverSock=new ServerSocket(6066);
+        ServerSocket serverSock=new ServerSocket(port);
         while(true) {
             Socket Sock=serverSock .accept();
             DataOutputStream out =new DataOutputStream(Sock.getOutputStream());
