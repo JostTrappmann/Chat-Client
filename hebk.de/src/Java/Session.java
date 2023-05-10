@@ -28,7 +28,6 @@ public class Session {
     public void addUser(User user, Socket socket){
         user.setSocket(socket);
         this.user.add(user);
-
     }
     public void newChat(DataOutputStream out, DataInputStream in, User user) throws IOException {
         out.writeUTF(user.getName());
@@ -49,4 +48,5 @@ public class Session {
             out.writeUTF(Reader.read());
         }
     }
+
 }
