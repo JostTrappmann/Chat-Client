@@ -18,5 +18,5 @@ public class Client {
         DataInputStream in= new DataInputStream(sock.getInputStream());
 
         DataOutputStream out =new DataOutputStream(sock.getOutputStream());
-        session.newChat(out, in);
+        session.newChat(out, in,pUser);
     }}

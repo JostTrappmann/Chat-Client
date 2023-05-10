@@ -30,7 +30,9 @@ public class Session {
         this.user.add(user);
 
     }
-    public void newChat(DataOutputStream out, DataInputStream in) throws IOException {
+    public void newChat(DataOutputStream out, DataInputStream in, User user) throws IOException {
+        out.writeUTF(user.getName());
+        System.out.println("This ist your Chat with "+ in.readUTF());
         Thread thread = new Thread(() -> {
             try {
                 System.out.println(in.readUTF());
@@ -41,7 +43,6 @@ public class Session {
         thread.start();
 
         while (true) {
-            System.out.println("Write your Message");
             out.writeUTF(Reader.read());
         }
     }

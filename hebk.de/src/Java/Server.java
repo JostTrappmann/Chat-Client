@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 public class Server {
 
     private Session session = new Session();
-    public void newSession() throws IOException{
+    public void newSession(User pUser) throws IOException{
 
         int Port =session.port();
         String IP = session.iP();
@@ -19,9 +19,8 @@ public class Server {
         while(true) {
             Socket Sock=serverSock .accept();
             DataOutputStream out =new DataOutputStream(Sock.getOutputStream());
-            //hier wird der User übergeben
             DataInputStream in= new DataInputStream(Sock.getInputStream());
-            session.newChat(out, in);
+            session.newChat(out, in,pUser);
         }
 
 
