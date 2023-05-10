@@ -11,9 +11,9 @@ public class Client {
     private Session session = new Session();
     public void joinSession(User pUser)throws IOException {
         System.out.println("join Session");
-        int Port =session.port();
+        int port =session.port();
         String IP = session.iP();
-        Socket sock=new Socket("localhost", 6066);
+        Socket sock=new Socket("localhost", port);
 
         DataInputStream in= new DataInputStream(sock.getInputStream());
 
