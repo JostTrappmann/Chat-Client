@@ -18,6 +18,7 @@ public class Server {
         ServerSocket serverSock=new ServerSocket(6066);
         Socket Sock=serverSock .accept();
         DataOutputStream out =new DataOutputStream(Sock.getOutputStream());
+        out.writeUTF("verbunden");
         //hier wird der User übergeben
         DataInputStream in= new DataInputStream(Sock.getInputStream());
         user.add(new User(in.readUTF()));
