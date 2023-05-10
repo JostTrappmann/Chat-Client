@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Server {
-    ArrayList user = new ArrayList();
+    ArrayList<User> user = new ArrayList();
     private Session session = new Session();
     public void newSession() throws IOException{
 
@@ -22,7 +22,7 @@ public class Server {
         //hier wird der User übergeben
         DataInputStream in= new DataInputStream(Sock.getInputStream());
         user.add(new User(in.readUTF()));
-        System.out.println("Server");
+        System.out.println(user.get(0).getName());
       //
 
     }
