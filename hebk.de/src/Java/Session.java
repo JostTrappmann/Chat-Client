@@ -31,8 +31,10 @@ public class Session {
 
     }
     public void newChat(DataOutputStream out, DataInputStream in) throws IOException {
-        System.out.println("Write your Message");
-        out.writeUTF(Reader.read());
-        System.out.println(in.readUTF());
+        while (true) {
+            System.out.println("Write your Message");
+            out.writeUTF(Reader.read());
+            System.out.println(in.readUTF());
+        }
     }
 }

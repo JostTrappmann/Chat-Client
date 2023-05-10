@@ -19,7 +19,6 @@ public class Server {
         while(true) {
             Socket Sock=serverSock .accept();
             DataOutputStream out =new DataOutputStream(Sock.getOutputStream());
-            out.writeUTF("verbunden");
             //hier wird der User übergeben
             DataInputStream in= new DataInputStream(Sock.getInputStream());
             session.newChat(out, in);
