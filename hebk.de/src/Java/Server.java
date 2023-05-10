@@ -8,7 +8,7 @@ import java.net.Socket;
 import javax.swing.JOptionPane;
 
 public class Server {
-    public static void main(String[] args) throws IOException{
+    public void newSession() throws IOException{
         int Port =Integer.parseInt(JOptionPane.showInputDialog("Input Your Port : "));
         String IP = JOptionPane.showInputDialog("Input Your IP Server : ");
         ServerSocket serverSock=new ServerSocket(6066);

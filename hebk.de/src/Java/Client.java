@@ -9,7 +9,8 @@ import javax.swing.JOptionPane;
 
 public class Client {
 
-    public static void main(String[] args)throws IOException {
+    public void joinSession()throws IOException {
+        System.out.println("join Session");
         int Port =Integer.parseInt(JOptionPane.showInputDialog("Input Your Port : "));
         String IP = JOptionPane.showInputDialog("Input Your IP Server : ");
         Socket sock=new Socket("localhost", 6066);
