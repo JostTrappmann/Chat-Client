@@ -32,11 +32,12 @@ public class Session {
     }
     public void newChat(DataOutputStream out, DataInputStream in, User user) throws IOException {
         out.writeUTF(user.getName());
-        System.out.println("This ist your Chat with "+ in.readUTF());
+        String friendName = in.readUTF();
+        System.out.println("This ist your Chat with "+ friendName);
         Thread thread = new Thread(() -> {
             while(true) {
                 try {
-                    System.out.println(in.readUTF());
+                    System.out.println(friendName + ": " + in.readUTF());
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
