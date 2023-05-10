@@ -8,10 +8,11 @@ import java.net.Socket;
 import javax.swing.JOptionPane;
 
 public class Server {
+    private Session session = new Session();
     public void newSession() throws IOException{
 
-        int Port =Integer.parseInt(JOptionPane.showInputDialog("Input Your Port : "));
-        String IP = JOptionPane.showInputDialog("Input Your IP Server : ");
+        int Port =session.port();
+        String IP = session.iP();
         ServerSocket serverSock=new ServerSocket(6066);
         Socket Sock=serverSock .accept();
         DataOutputStream out =new DataOutputStream(Sock.getOutputStream());
