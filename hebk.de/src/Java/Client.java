@@ -21,6 +21,7 @@ public class Client {
         DataOutputStream out =new DataOutputStream(sock.getOutputStream());
             //sendet Daten
         out.writeUTF(pUser.getName());
+        System.out.println("Client");
         out.writeUTF("waiting for connection");
 
     }}

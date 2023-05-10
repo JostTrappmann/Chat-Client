@@ -21,7 +21,7 @@ public class Server {
         //hier wird der User übergeben
         DataInputStream in= new DataInputStream(Sock.getInputStream());
         user.add(new User(in.readUTF()));
-
+        System.out.println("Server");
       //
 
     }
