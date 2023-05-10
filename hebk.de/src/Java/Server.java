@@ -5,9 +5,11 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Server {
+    ArrayList user = new ArrayList();
     private Session session = new Session();
     public void newSession() throws IOException{
 
@@ -16,9 +18,11 @@ public class Server {
         ServerSocket serverSock=new ServerSocket(6066);
         Socket Sock=serverSock .accept();
         DataOutputStream out =new DataOutputStream(Sock.getOutputStream());
-        out.writeUTF(JOptionPane.showInputDialog("Message"));
+        //hier wird der User übergeben
         DataInputStream in= new DataInputStream(Sock.getInputStream());
-        System.out.println(in.readUTF());
-        Sock.close();
+        user.add(new User(in.readUTF()));
+
+      //
+
     }
 }

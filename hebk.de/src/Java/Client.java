@@ -9,14 +9,18 @@ import javax.swing.JOptionPane;
 
 public class Client {
     private Session session = new Session();
-    public void joinSession()throws IOException {
+    public void joinSession(User pUser)throws IOException {
         System.out.println("join Session");
         int Port =session.port();
         String IP = session.iP();
         Socket sock=new Socket("localhost", 6066);
+        //Verbindung da
         DataInputStream in= new DataInputStream(sock.getInputStream());
+            //empfängt daten
         System.out.println(in.readUTF());
         DataOutputStream out =new DataOutputStream(sock.getOutputStream());
+            //sendet Daten
+        out.writeUTF(pUser.getName());
         out.writeUTF("waiting for connection");
-        sock.close();
+
     }}
