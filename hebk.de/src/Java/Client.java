@@ -13,7 +13,7 @@ public class Client {
         System.out.println("join Session");
         int port =session.port();
         String IP = session.iP();
-        Socket sock=new Socket("localhost", port);
+        Socket sock=new Socket("ocalhost", port);
 
         DataInputStream in= new DataInputStream(sock.getInputStream());
 
