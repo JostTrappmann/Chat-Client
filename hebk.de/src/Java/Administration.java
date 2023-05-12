@@ -4,8 +4,22 @@ import java.io.IOException;
 
 public class Administration {
     public User createUser(){
-        System.out.println("Please select a Name");
-        return new User(Reader.read());
+        String name = null;
+        boolean b = true;
+        while(b) {
+            System.out.println("Please select a Name");
+            name = Reader.read();
+            if (name.equals("Random")) {
+                System.out.println("You've found the easter egg random Name");
+                name = Reader.randomName();
+            }
+            System.out.println("You're name ist : [" + name + "] do you want to keep it?");
+            switch(Reader.read()){
+                case "yes": b = false; break;
+                default:
+            }
+        }
+        return new User(name);
     }
     public void serverOrClient() throws IOException {
         User user = createUser();
